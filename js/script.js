@@ -21,36 +21,34 @@ let interval;
 
 function IdleAnimation(){
     let contIdle =0;
-    MAXIDLE = 16;
+    const MAXIDLE = 16;
     interval = setInterval(()=>{
-        for(let i=0;i<MAXIDLE;i++){
-            if(contIdle>MAXIDLE){
-                contIdle=0;
-            }
             contIdle++;
-            setTimeout(()=>{
-                
-                test.innerHTML = `<img src="/assets/png/Idle (${contIdle}).png">`;           
+            if(contIdle>MAXIDLE){
+                contIdle=1;
+            }
             
-            },i*250);
-        }
+            setTimeout(()=>{                
+                test.innerHTML = `<img src="/assets/png/Idle (${contIdle}).png">`;           
+            },200);
+        
     }, 500);
 }
 
 function WalkAnimation(){
     let contWalk =0;
-    MAXWALK=20;
+    const MAXWALK=20;
     interval = setInterval(()=>{
-        for(let i=0;i<MAXWALK;i++){
-            if(contWalk>MAXWALK){
-                contWalk=0;
-            }
             contWalk++;
+            if(contWalk>MAXWALK){
+                contWalk=1;
+            }
+            
             setTimeout(()=>{
             test.innerHTML = `<img src="/assets/png/Walk (${contWalk}).png">`;
-            },i*250);
+            },250);
             
-        }
+        
     }, 500);
 }
 
@@ -69,10 +67,10 @@ main.addEventListener("click",(event)=>{
     }, 1500);
 
     
-    setTimeout(()=>{
-        clearInterval(interval);
-        IdleAnimation();
-    }, 5000);
+    // setTimeout(()=>{
+    //     clearInterval(interval);
+    //     IdleAnimation();
+    // }, 5000);
 
 
     console.log(mouseX, mouseY);

@@ -13,7 +13,7 @@ main{
     
 }
 #test img{
-    width: 160px;
+    width: 60px;
     height: auto;
     /* background-color: black; */
     transition: transform 1s ease; /* Smooth animation */
