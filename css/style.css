@@ -13,9 +13,9 @@ main{
     
 }
 #test img{
-    width: 60px;
+    width: 120px;
     height: auto;
-    /* background-color: black; */
     transition: transform 1s ease; /* Smooth animation */
+    transition-duration: 20ms;
     transform: translate(var(--custom-x, 0), var(--custom-y, 0));
 }

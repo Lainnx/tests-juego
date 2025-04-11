@@ -4,20 +4,8 @@ const main = document.getElementById("main");
 
 let interval;
 
-
-// main.addEventListener("click",()=>{
-//     cont = 0;
-    
-//     for(let i=0;i<16;i++){
-//         setTimeout(()=>{
-//             cont++;
-//             test.innerHTML = `<img src="/assets/png/Idle (${cont}).png">`;
-//         }, i * 500);
-//     }
-
-    
-// })
-
+DESVIACIONX = 116;
+DESVIACIONY = 185;
 
 function IdleAnimation(){
     let contIdle =0;
@@ -28,11 +16,11 @@ function IdleAnimation(){
                 contIdle=1;
             }
             
-            setTimeout(()=>{                
+            //setTimeout(()=>{                
                 test.innerHTML = `<img src="/assets/png/Idle (${contIdle}).png">`;           
-            },200);
+            //},250);
         
-    }, 500);
+    }, 100);
 }
 
 function WalkAnimation(){
@@ -44,12 +32,13 @@ function WalkAnimation(){
                 contWalk=1;
             }
             
-            setTimeout(()=>{
+            //setTimeout(()=>{
             test.innerHTML = `<img src="/assets/png/Walk (${contWalk}).png">`;
-            },250);
+            // console.log(contWalk);
+            //},250);
             
         
-    }, 500);
+    }, 100);
 }
 
 IdleAnimation();
@@ -62,20 +51,16 @@ main.addEventListener("click",(event)=>{
     
     
     setTimeout(()=>{
-        document.documentElement.style.setProperty('--custom-x', `${mouseX}px`);
-        document.documentElement.style.setProperty('--custom-y', `${mouseY}px`);
-    }, 1500);
+        document.documentElement.style.setProperty('--custom-x', `${mouseX-DESVIACIONX}px`);    //para que se mueva al cursor
+        document.documentElement.style.setProperty('--custom-y', `${mouseY-DESVIACIONY}px`);
+    }, 1500);   //que la animacion empieze antes de mover el personaje
 
+
+    setTimeout(()=>{
+        clearInterval(interval);
+        IdleAnimation();
+    }, 5000);
     
-    // setTimeout(()=>{
-    //     clearInterval(interval);
-    //     IdleAnimation();
-    // }, 5000);
-
 
     console.log(mouseX, mouseY);
-    // clearInterval(interval);
-    // test.innerHTML = `<img src="/assets/png/Idle (1).png">`
 })
-
-IdleAnimation();
