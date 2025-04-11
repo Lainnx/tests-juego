@@ -16,6 +16,6 @@ main{
     width: 120px;
     height: auto;
     transition: transform 1s ease; /* Smooth animation */
-    transition-duration: 20ms;
+    /* transition-duration: 20ms; */
     transform: translate(var(--custom-x, 0), var(--custom-y, 0));
 }
