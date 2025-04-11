@@ -1,3 +1,6 @@
+:root{
+    --width-figura:120px;
+}
 *{
     padding: 0;
     margin: 0;
@@ -13,9 +16,9 @@ main{
     
 }
 #test img{
-    width: 120px;
+    width: var(--width-figura);
     height: auto;
-    transition: transform 1s ease; /* Smooth animation */
+    /* transition: transform 10s ease;  */
     /* transition-duration: 20ms; */
-    transform: translate(var(--custom-x, 0), var(--custom-y, 0));
+    /* transform: translate(var(--custom-x, 0), var(--custom-y, 0)); */
 }

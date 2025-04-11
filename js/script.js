@@ -7,6 +7,10 @@ let interval;
 DESVIACIONX = 116;
 DESVIACIONY = 185;
 
+const rootCSS = getComputedStyle(document.documentElement); //obtiene variables root
+widthFigura = parseInt(rootCSS.getPropertyValue('--width-figura'));    //obtiene witdth figura del root (int)
+console.log(widthFigura);
+
 function IdleAnimation(){
     let contIdle =0;
     const MAXIDLE = 16;
@@ -41,6 +45,14 @@ function WalkAnimation(){
     }, 100);
 }
 
+function calculoModulo(x1,y1,x2,y2){
+    
+}
+/* ****************************************************** */
+
+
+
+
 IdleAnimation();
 
 main.addEventListener("click",(event)=>{
@@ -50,10 +62,13 @@ main.addEventListener("click",(event)=>{
     const mouseY = event.clientY;
     
     
+    
     setTimeout(()=>{
         document.documentElement.style.setProperty('--custom-x', `${mouseX-DESVIACIONX}px`);    //para que se mueva al cursor
         document.documentElement.style.setProperty('--custom-y', `${mouseY-DESVIACIONY}px`);
     }, 1500);   //que la animacion empieze antes de mover el personaje
+
+
 
 
     setTimeout(()=>{
