@@ -18,7 +18,7 @@ main{
 #test img{
     width: var(--width-figura);
     height: auto;
-    /* transition: transform 10s ease;  */
-    /* transition-duration: 20ms; */
-    /* transform: translate(var(--custom-x, 0), var(--custom-y, 0)); */
+    transition: transform 10s ease;  */
+    transition-duration: 20ms;
+    transform: translate(var(--custom-x, 0), var(--custom-y, 0));
 }
